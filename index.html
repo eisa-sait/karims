@@ -326,10 +326,17 @@
           </div>
         </div>
 
+        <!-- Direct WhatsApp Activation -->
+        <div id="vip-whatsapp-share-container" class="hidden pt-1">
+          <a id="btn-vip-whatsapp-send" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs flex items-center justify-center gap-2 shadow transition-all">
+            <span>💬</span> Send Details to Store WhatsApp (+91 79073 43729)
+          </a>
+        </div>
+
         <!-- WhatsApp Quick Connect -->
         <div class="text-center pt-2">
-          <a href="https://wa.me/919846020786?text=Hi%20Karims%20Fashion%20Corner,%20I'd%20like%20to%20join%20the%20VIP%20Club!" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-800 bg-emerald-50 px-4 py-2.5 rounded-full border border-emerald-200 hover:bg-emerald-100 transition-all">
-            <span>💬</span> 1-Tap Join via WhatsApp (+91 98460 20786)
+          <a href="https://wa.me/917907343729?text=Hi%20Karims%20Fashion%20Corner,%20I'd%20like%20to%20join%20the%20VIP%20Club!" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-800 bg-emerald-50 px-4 py-2.5 rounded-full border border-emerald-200 hover:bg-emerald-100 transition-all">
+            <span>💬</span> 1-Tap Join via WhatsApp (+91 79073 43729)
           </a>
         </div>
       </section>
@@ -404,7 +411,7 @@
             <span class="text-lg">📞</span>
             <div>
               <strong class="text-gray-800">Phone / WhatsApp:</strong>
-              <span class="text-gray-600 ml-1">+91 98460 20786 / +91 79073 43729</span>
+              <span class="text-gray-600 ml-1">+91 79073 43729 / +91 79073 43729</span>
             </div>
           </div>
 
@@ -426,6 +433,9 @@
           <p class="text-xs text-gray-600">
             Need a printed standee or counter QR display card for the billing desk? View the ready QR code or open printable assets below.
           </p>
+          <button type="button" id="btn-export-csv" class="w-full py-2.5 px-3 rounded-xl bg-[#c59b27] text-white text-xs font-bold hover:bg-[#aa7c11] transition-all flex items-center justify-center gap-2 mb-2">
+            <span>📊 Download Member List to Excel (.csv)</span>
+          </button>
           <button type="button" id="btn-show-qr-modal" class="w-full py-2.5 px-3 rounded-xl bg-[#0a3d2e] text-white text-xs font-bold hover:bg-emerald-900 transition-all flex items-center justify-center gap-2">
             <span>🖨️ View & Print Countertop QR Card</span>
           </button>
@@ -830,6 +840,19 @@
       } catch (err) {
         console.log('Storage not accessible', err);
       }
+
+      // Update WhatsApp 1-tap link with member info
+      const waLink = document.querySelector('a[href*="wa.me/917907343729"]');
+      if (waLink) {
+        const msg = 'Hi Karims Fashion Corner, I just registered for the VIP Club!\n' +
+                    'Name: ' + name + '\n' +
+                    'Phone: ' + phone + '\n' +
+                    'Member ID: ' + randomId + '\n' +
+                    'Favorite: ' + category + '\n' +
+                    'Please activate my 10% welcome discount!';
+        waLink.href = 'https://wa.me/917907343729?text=' + encodeURIComponent(msg);
+        waLink.innerHTML = '<span>💬</span> Confirm VIP Membership via WhatsApp (+91 79073 43729)';
+      }
     });
 
     // QR Modal Controls
@@ -844,6 +867,40 @@
     btnPrintQr.addEventListener('click', () => {
       window.print();
     });
+
+    // CSV Export for Manager
+    const btnExportCsv = document.getElementById('btn-export-csv');
+    if (btnExportCsv) {
+      btnExportCsv.addEventListener('click', () => {
+        try {
+          const members = JSON.parse(localStorage.getItem('karims_vip_members') || '[]');
+          if (members.length === 0) {
+            showToast('No member sign-ups recorded on this device yet', 'ℹ️');
+            return;
+          }
+          let csv = 'Member ID,Full Name,Phone Number,Favorite Category,Join Date\n';
+          members.forEach(m => {
+            const mId = m.memberId || '';
+            const mName = m.name || '';
+            const mPhone = m.phone || '';
+            const mCat = m.category || '';
+            const mDate = m.date || '';
+            csv += '"' + mId + '","' + mName + '","' + mPhone + '","' + mCat + '","' + mDate + '"\n';
+          });
+          const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.setAttribute('href', url);
+          link.setAttribute('download', 'karims_vip_members.csv');
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          showToast('Downloaded VIP Members Excel CSV!', '📊');
+        } catch (err) {
+          showToast('Export failed: ' + err.message, '⚠️');
+        }
+      });
+    }
 
     qrModal.addEventListener('click', (e) => {
       if (e.target === qrModal) {
