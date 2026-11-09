@@ -841,6 +841,32 @@
         console.log('Storage not accessible', err);
       }
 
+      // Automatically sync to Live Google Sheet Webhook
+      const googleSheetWebhook = 'https://script.google.com/macros/s/AKfycbzsgOzJ7RB1XvBiOtENQil3P9swAqtcw82YhiwfbVrX2rS3R7AsGvtrllm7MeuQYCdP/exec';
+      const todayStr = new Date().toISOString().split('T')[0];
+      try {
+        fetch(googleSheetWebhook, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+          },
+          body: JSON.stringify({
+            memberId: randomId,
+            name: name,
+            phone: phone,
+            category: category,
+            date: todayStr
+          })
+        }).then(() => {
+          console.log('Synced to Google Sheet successfully');
+        }).catch(err => {
+          console.log('Sync note:', err);
+        });
+      } catch (err) {
+        console.log('Webhook call error:', err);
+      }
+
       // Update WhatsApp 1-tap link with member info
       const waLink = document.querySelector('a[href*="wa.me/917907343729"]');
       if (waLink) {
