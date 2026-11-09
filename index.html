@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karims Fashion Corner | Customer Hub & AI Review Assistant</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --karims-green: #0a3d2e;
+      --karims-green-dark: #06261d;
+      --karims-gold: #c59b27;
+      --karims-gold-light: #f3e8c9;
+      --karims-cream: #faf8f5;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f4f1ea;
+      color: #1f2937;
+    }
+    .font-serif-brand {
+      font-family: 'Cinzel', serif;
+    }
+    .badge-gold {
+      background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+      color: #ffffff;
+    }
+    .card-luxury {
+      background: #ffffff;
+      box-shadow: 0 10px 30px -5px rgba(10, 61, 46, 0.08), 0 4px 6px -2px rgba(10, 61, 46, 0.04);
+      border: 1px solid rgba(197, 155, 39, 0.2);
+    }
+    .tab-active {
+      background-color: #0a3d2e;
+      color: #ffffff;
+      border-color: #0a3d2e;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-3 sm:p-6 antialiased">
+
+  <!-- Mobile Container (Mimics Mobile Scan Experience on Desktop, Fluid on Phone) -->
+  <div class="w-full max-w-lg bg-white rounded-3xl overflow-hidden card-luxury relative my-auto">
+    
+    <!-- Top Header Banner -->
+    <header class="bg-[#0a3d2e] text-white pt-8 pb-7 px-6 text-center relative overflow-hidden">
+      <!-- Decorative Background Circles -->
+      <div class="absolute -right-12 -top-12 w-40 h-40 rounded-full bg-emerald-800/30 blur-xl pointer-events-none"></div>
+      <div class="absolute -left-12 -bottom-12 w-40 h-40 rounded-full bg-[#c59b27]/20 blur-xl pointer-events-none"></div>
+      
+      <div class="relative z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/60 border border-[#c59b27]/40 text-[#f3e8c9] text-xs uppercase tracking-widest font-semibold mb-3">
+          <span>🌿 Chalai Bazaar, Trivandrum • Est. 1971</span>
+        </div>
+        
+        <h1 class="font-serif-brand text-2xl sm:text-3xl font-bold tracking-wide text-[#fdfbf7] uppercase">
+          Karims Fashion Corner
+        </h1>
+        <p class="text-xs sm:text-sm text-emerald-200 mt-1 font-medium">
+          50+ Years of Pure Fabric, Heritage & Family Trust
+        </p>
+      </div>
+
+      <!-- Quick Stats / Trust Bar -->
+      <div class="grid grid-cols-3 gap-2 mt-5 pt-4 border-t border-emerald-800/60 text-center text-xs">
+        <div>
+          <span class="block font-bold text-amber-300 text-sm">3rd Gen</span>
+          <span class="text-emerald-200/80 text-[11px]">Family Legacy</span>
+        </div>
+        <div>
+          <span class="block font-bold text-amber-300 text-sm">★ 4.8 / 5</span>
+          <span class="text-emerald-200/80 text-[11px]">Customer Love</span>
+        </div>
+        <div>
+          <span class="block font-bold text-amber-300 text-sm">Chikankari</span>
+          <span class="text-emerald-200/80 text-[11px]">& Sarees Hub</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="flex border-b border-gray-100 bg-[#faf8f5] p-1.5 text-xs font-semibold gap-1.5 overflow-x-auto" aria-label="Portal Navigation">
+      <button id="nav-reviews" class="flex-1 py-2.5 px-3 rounded-xl tab-active transition-all duration-200 flex items-center justify-center gap-1.5 whitespace-nowrap shadow-sm">
+        <span>⭐</span> Google Review
+      </button>
+      <button id="nav-vip" class="flex-1 py-2.5 px-3 rounded-xl text-gray-600 hover:text-[#0a3d2e] hover:bg-white transition-all duration-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+        <span>👑</span> VIP Club
+      </button>
+      <button id="nav-instagram" class="flex-1 py-2.5 px-3 rounded-xl text-gray-600 hover:text-[#0a3d2e] hover:bg-white transition-all duration-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+        <span>📸</span> Instagram
+      </button>
+      <button id="nav-info" class="flex-1 py-2.5 px-3 rounded-xl text-gray-600 hover:text-[#0a3d2e] hover:bg-white transition-all duration-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+        <span>📍</span> Store Info
+      </button>
+    </nav>
+
+    <!-- MAIN CONTENT SECTIONS -->
+    <main class="p-5 sm:p-6 space-y-6">
+
+      <!-- SECTION 1: AI REVIEW ASSISTANT -->
+      <section id="section-reviews" class="space-y-5">
+        <div class="bg-gradient-to-r from-amber-50 to-emerald-50 p-4 rounded-2xl border border-amber-200/60 flex items-start gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#0a3d2e] text-amber-300 flex items-center justify-center text-lg flex-shrink-0 shadow-sm">
+            ✨
+          </div>
+          <div>
+            <h2 class="text-sm font-bold text-[#0a3d2e]">Instant AI Review Generator</h2>
+            <p class="text-xs text-gray-600 mt-0.5">
+              Select what you loved during your visit today. Our AI will draft a genuine, polished review for you to copy and post to Google in one tap!
+            </p>
+          </div>
+        </div>
+
+        <!-- Star Rating -->
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+            Rate Your Experience
+          </label>
+          <div class="flex items-center gap-2" id="star-container">
+            <button type="button" class="star-btn text-2xl sm:text-3xl text-amber-400 hover:scale-110 transition-transform" data-star="1">★</button>
+            <button type="button" class="star-btn text-2xl sm:text-3xl text-amber-400 hover:scale-110 transition-transform" data-star="2">★</button>
+            <button type="button" class="star-btn text-2xl sm:text-3xl text-amber-400 hover:scale-110 transition-transform" data-star="3">★</button>
+            <button type="button" class="star-btn text-2xl sm:text-3xl text-amber-400 hover:scale-110 transition-transform" data-star="4">★</button>
+            <button type="button" class="star-btn text-2xl sm:text-3xl text-amber-400 hover:scale-110 transition-transform" data-star="5">★</button>
+            <span id="star-label" class="ml-2 text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">
+              5.0 Excellent!
+            </span>
+          </div>
+        </div>
+
+        <!-- Experience Chips -->
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+            What did you shop or appreciate? <span class="text-gray-400 font-normal">(Pick 1 or more)</span>
+          </label>
+          <div class="flex flex-wrap gap-2" id="tag-container">
+            <button type="button" class="tag-chip text-xs px-3 py-1.5 rounded-full border border-gray-200 bg-white hover:border-[#0a3d2e] text-gray-700 font-medium transition-all" data-tag="chikankari">
+              👗 Chikankari Kurtis & Tops
+            </button>
+            <button type="button" class="tag-chip text-xs px-3 py-1.5 rounded-full border border-gray-200 bg-white hover:border-[#0a3d2e] text-gray-700 font-medium transition-all" data-tag="sarees">
+              🥻 Sarees (Party & Daily)
+            </button>
+            <button type="button" class="tag-chip text-xs px-3 py-1.5 rounded-full border border-gray-200 bg-white hover:border-[#0a3d2e] text-gray-700 font-medium transition-all" data-tag="materials">
+              🧵 Churidar & Dress Materials
+            </button>
+            <button type="button" class="tag-chip text-xs px-3 py-1.5 rounded-full border border-gray-200 bg-white hover:border-[#0a3d2e] text-gray-700 font-medium transition-all" data-tag="staff">
+              🤝 Patient & Friendly Staff
+            </button>
+            <button type="button" class="tag-chip text-xs px-3 py-1.5 rounded-full border border-gray-200 bg-white hover:border-[#0a3d2e] text-gray-700 font-medium transition-all" data-tag="value">
+              💰 Fair Pricing & Value
+            </button>
+            <button type="button" class="tag-chip text-xs px-3 py-1.5 rounded-full border border-gray-200 bg-white hover:border-[#0a3d2e] text-gray-700 font-medium transition-all" data-tag="heritage">
+              🏛️ Chalai Heritage & Trust
+            </button>
+            <button type="button" class="tag-chip text-xs px-3 py-1.5 rounded-full border border-gray-200 bg-white hover:border-[#0a3d2e] text-gray-700 font-medium transition-all" data-tag="tailoring">
+              ✂️ Custom Fitting Support
+            </button>
+          </div>
+        </div>
+
+        <!-- Tone / Style Selection -->
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+            Review Tone
+          </label>
+          <div class="grid grid-cols-3 gap-2" id="tone-container">
+            <button type="button" class="tone-btn py-2 px-2 rounded-xl border border-[#0a3d2e] bg-emerald-50 text-[#0a3d2e] font-semibold text-xs text-center transition-all" data-tone="detailed">
+              Heartfelt & Detailed
+            </button>
+            <button type="button" class="tone-btn py-2 px-2 rounded-xl border border-gray-200 bg-white text-gray-600 font-medium text-xs text-center transition-all" data-tone="quick">
+              Quick & Punchy
+            </button>
+            <button type="button" class="tone-btn py-2 px-2 rounded-xl border border-gray-200 bg-white text-gray-600 font-medium text-xs text-center transition-all" data-tone="heritage">
+              Heritage & Quality
+            </button>
+          </div>
+        </div>
+
+        <!-- Custom Add-on Input -->
+        <div>
+          <label for="custom-note" class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">
+            Specific Item or Shoutout <span class="text-gray-400 font-normal">(Optional)</span>
+          </label>
+          <input type="text" id="custom-note" placeholder="e.g. Bought a pastel georgette saree, staff was very helpful" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0a3d2e] focus:border-transparent transition-all">
+        </div>
+
+        <!-- Generate Button -->
+        <button type="button" id="btn-generate-review" class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#0a3d2e] to-emerald-800 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+          <span>✨ Generate AI Review</span>
+        </button>
+
+        <!-- Output Review Card -->
+        <div id="review-output-card" class="bg-gradient-to-b from-[#faf8f5] to-amber-50/40 p-4 rounded-2xl border border-amber-200/80 space-y-3">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold text-[#0a3d2e] flex items-center gap-1.5">
+              <span>📝</span> Generated Review:
+            </span>
+            <button type="button" id="btn-regenerate" class="text-xs text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+              <span>🔄</span> Try Another
+            </button>
+          </div>
+
+          <textarea id="review-text" rows="4" class="w-full text-xs sm:text-sm p-3 rounded-xl bg-white border border-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#0a3d2e] leading-relaxed resize-none"></textarea>
+
+          <!-- Action Buttons -->
+          <div class="space-y-2 pt-1">
+            <button type="button" id="btn-copy-and-open" class="w-full py-3.5 px-4 rounded-xl bg-[#c59b27] hover:bg-[#b0881e] text-white font-bold text-sm shadow-md flex items-center justify-center gap-2 transition-all">
+              <span>📋 Copy Review & Open Google Review</span>
+              <span>↗</span>
+            </button>
+            <p class="text-[11px] text-center text-gray-500">
+              Opens Google Reviews directly for <span class="font-semibold text-gray-700">Karims Fashion Corner</span>. Simply tap "Paste" on Google!
+            </p>
+          </div>
+        </div>
+
+        <!-- Quick 1-Tap Google Link -->
+        <div class="text-center pt-2">
+          <a href="https://search.google.com/local/writereview?placeid=ChIJX-itYKe7BTsRlOnz0uQMyMk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-[#0a3d2e] font-semibold hover:underline">
+            <span>Direct Google Review Link (Write from Scratch)</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- SECTION 2: VIP MEMBERSHIP SIGNUP -->
+      <section id="section-vip" class="space-y-5 hidden">
+        <div class="bg-gradient-to-r from-amber-500 to-amber-600 text-white p-5 rounded-2xl relative overflow-hidden shadow-md">
+          <div class="relative z-10">
+            <div class="inline-block px-2.5 py-0.5 rounded-full bg-white/20 text-xs font-bold uppercase tracking-wider mb-2">
+              Privilege Rewards
+            </div>
+            <h2 class="font-serif-brand text-xl font-bold text-white">Join the Karims VIP Family</h2>
+            <p class="text-xs text-amber-100 mt-1">
+              Exclusive privileges designed for our cherished shoppers in Trivandrum.
+            </p>
+          </div>
+        </div>
+
+        <!-- Member Perks Grid -->
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <div class="p-3 rounded-xl bg-[#faf8f5] border border-amber-200/50 space-y-1">
+            <span class="text-lg">🎁</span>
+            <h3 class="font-bold text-[#0a3d2e]">Flat 10% Welcome</h3>
+            <p class="text-[11px] text-gray-600">Instant savings on your next in-store shopping bill.</p>
+          </div>
+          <div class="p-3 rounded-xl bg-[#faf8f5] border border-amber-200/50 space-y-1">
+            <span class="text-lg">🥻</span>
+            <h3 class="font-bold text-[#0a3d2e]">Festive Previews</h3>
+            <p class="text-[11px] text-gray-600">Priority WhatsApp alerts on new Chikankari & Saree arrivals.</p>
+          </div>
+          <div class="p-3 rounded-xl bg-[#faf8f5] border border-amber-200/50 space-y-1">
+            <span class="text-lg">🎂</span>
+            <h3 class="font-bold text-[#0a3d2e]">Birthday Treat</h3>
+            <p class="text-[11px] text-gray-600">Special celebration voucher during your birthday month.</p>
+          </div>
+          <div class="p-3 rounded-xl bg-[#faf8f5] border border-amber-200/50 space-y-1">
+            <span class="text-lg">✂️</span>
+            <h3 class="font-bold text-[#0a3d2e]">Custom Fitting</h3>
+            <p class="text-[11px] text-gray-600">Complimentary consultation for blouse & dress alterations.</p>
+          </div>
+        </div>
+
+        <!-- Membership Form -->
+        <form id="vip-form" class="space-y-3.5 bg-white p-4 rounded-2xl border border-gray-200">
+          <div>
+            <label for="vip-name" class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">
+              Full Name *
+            </label>
+            <input type="text" id="vip-name" required placeholder="e.g. Ananya Nair" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0a3d2e]">
+          </div>
+
+          <div>
+            <label for="vip-phone" class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">
+              Mobile / WhatsApp Number *
+            </label>
+            <input type="tel" id="vip-phone" required placeholder="e.g. 98460XXXXX" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0a3d2e]">
+          </div>
+
+          <div>
+            <label for="vip-category" class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">
+              Favorite Category
+            </label>
+            <select id="vip-category" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0a3d2e] bg-white">
+              <option value="Chikankari & Kurtis">Chikankari Tops & Kurtis</option>
+              <option value="Sarees (Silk & Party)">Sarees (Silk, Georgette & Party)</option>
+              <option value="Churidar Materials">Churidar & Unstitched Materials</option>
+              <option value="Kerala Traditional">Kerala Traditional & Kasavu</option>
+            </select>
+          </div>
+
+          <button type="submit" id="btn-submit-vip" class="w-full py-3.5 px-4 rounded-xl bg-[#0a3d2e] hover:bg-emerald-900 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all">
+            Join VIP Club & Get 10% Off
+          </button>
+        </form>
+
+        <!-- Digital VIP Card (Populated on Submit) -->
+        <div id="vip-card-preview" class="hidden p-5 rounded-2xl bg-gradient-to-br from-emerald-900 via-[#0a3d2e] to-black text-white space-y-4 border border-amber-300/40 shadow-xl relative overflow-hidden">
+          <div class="flex justify-between items-start relative z-10">
+            <div>
+              <span class="text-[10px] tracking-widest uppercase text-amber-300 font-bold">Privilege Member</span>
+              <h3 id="card-member-name" class="font-serif-brand text-lg font-bold text-white mt-0.5">VIP Customer</h3>
+            </div>
+            <span class="font-serif-brand text-xl text-amber-400 font-bold">1971</span>
+          </div>
+
+          <div class="flex justify-between items-end text-xs relative z-10 pt-2 border-t border-white/10">
+            <div>
+              <span class="block text-[10px] text-gray-400">MEMBER ID</span>
+              <span id="card-member-id" class="font-mono text-xs font-bold text-amber-300">KFC-2026-VIP</span>
+            </div>
+            <div class="text-right">
+              <span class="block text-[10px] text-gray-400">DISCOUNT CODE</span>
+              <span class="font-mono font-bold text-amber-300">KARIMS10</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- WhatsApp Quick Connect -->
+        <div class="text-center pt-2">
+          <a href="https://wa.me/919846020786?text=Hi%20Karims%20Fashion%20Corner,%20I'd%20like%20to%20join%20the%20Karims%20VIP%20Club!" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-800 bg-emerald-50 px-4 py-2.5 rounded-full border border-emerald-200 hover:bg-emerald-100 transition-all">
+            <span>💬</span> 1-Tap Join via WhatsApp (+91 98460 20786)
+          </a>
+        </div>
+      </section>
+
+      <!-- SECTION 3: INSTAGRAM & SOCIALS -->
+      <section id="section-instagram" class="space-y-5 hidden">
+        <div class="bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500 text-white p-5 rounded-2xl shadow-md">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-xs uppercase tracking-widest font-semibold text-rose-200">Official Instagram</span>
+              <h2 class="font-serif-brand text-xl font-bold">@karimsfashioncorner</h2>
+              <p class="text-xs text-rose-100 mt-1">Draping ideas, new fabric drops & Chalai stories.</p>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl">
+              📸
+            </div>
+          </div>
+          <div class="mt-4">
+            <a href="https://www.instagram.com/karimsfashioncorner/" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 bg-white text-gray-900 rounded-xl font-bold text-xs inline-flex items-center justify-center gap-1.5 shadow hover:bg-gray-100 transition-all">
+              <span>Follow on Instagram</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Content Highlights -->
+        <div class="space-y-2.5">
+          <h3 class="text-xs font-bold text-gray-700 uppercase tracking-wider">What We Share on Instagram</h3>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="p-3 bg-[#faf8f5] rounded-xl border border-gray-200/80">
+              <span class="text-base block mb-1">✨</span>
+              <strong class="block text-gray-800">Fresh Stock Drops</strong>
+              <span class="text-[11px] text-gray-600">Be first to view newly arrived Chikankari pastels & designer sarees.</span>
+            </div>
+            <div class="p-3 bg-[#faf8f5] rounded-xl border border-gray-200/80">
+              <span class="text-base block mb-1">🪡</span>
+              <strong class="block text-gray-800">Fabric & Styling</strong>
+              <span class="text-[11px] text-gray-600">Tips on cotton care, pallu styling, and blouse customization.</span>
+            </div>
+            <div class="p-3 bg-[#faf8f5] rounded-xl border border-gray-200/80">
+              <span class="text-base block mb-1">🏛️</span>
+              <strong class="block text-gray-800">Chalai Heritage</strong>
+              <span class="text-[11px] text-gray-600">Archival photographs and memories from Trivandrum's oldest bazaar.</span>
+            </div>
+            <div class="p-3 bg-[#faf8f5] rounded-xl border border-gray-200/80">
+              <span class="text-base block mb-1">🏷️</span>
+              <strong class="block text-gray-800">Secret Story Flash Sales</strong>
+              <span class="text-[11px] text-gray-600">24-hour exclusive discounts announced only on our Instagram stories.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 text-center text-xs text-amber-900">
+          Tag us in your outfit reels using <span class="font-bold">#KarimsFashionCorner</span> or <span class="font-bold">#ChalaiLegacy</span> to receive an instant ₹200 gift voucher!
+        </div>
+      </section>
+
+      <!-- SECTION 4: STORE INFO & MANAGER TOOLS -->
+      <section id="section-info" class="space-y-5 hidden">
+        <div class="bg-white p-4 rounded-2xl border border-gray-200 space-y-3 text-xs">
+          <div class="flex items-start gap-3">
+            <span class="text-lg">📍</span>
+            <div>
+              <strong class="block text-sm text-[#0a3d2e]">Karims Fashion Corner</strong>
+              <p class="text-gray-600 mt-0.5">
+                Chalai Market Road, Opposite Gandhi Park, East Fort, Chalai, Thiruvananthapuram, Kerala 695036
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 pt-2 border-t border-gray-100">
+            <span class="text-lg">📞</span>
+            <div>
+              <strong class="text-gray-800">Phone / WhatsApp:</strong>
+              <span class="text-gray-600 ml-1">+91 98460 20786 / +91 79073 43729</span>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 pt-2 border-t border-gray-100">
+            <span class="text-lg">⏰</span>
+            <div>
+              <strong class="text-gray-800">Opening Hours:</strong>
+              <span class="text-gray-600 ml-1">Mon – Sat: 10:00 AM – 8:30 PM (Sunday Closed)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Manager Quick Action Modal Trigger -->
+        <div class="p-4 rounded-2xl bg-emerald-50/80 border border-emerald-200 space-y-2.5">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-[#0a3d2e] uppercase tracking-wider">Manager Desk</span>
+            <span class="text-[10px] bg-emerald-200 text-emerald-900 font-bold px-2 py-0.5 rounded-full">Store Operations</span>
+          </div>
+          <p class="text-xs text-gray-600">
+            Need a printed standee or counter QR display card for the billing desk? View the ready QR code or open printable assets below.
+          </p>
+          <button type="button" id="btn-show-qr-modal" class="w-full py-2.5 px-3 rounded-xl bg-[#0a3d2e] text-white text-xs font-bold hover:bg-emerald-900 transition-all flex items-center justify-center gap-2">
+            <span>🖨️ View & Print Countertop QR Card</span>
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-100 py-4 px-6 text-center text-[11px] text-gray-500">
+      Karims Fashion Corner • Operations Portal • Chalai, Trivandrum
+    </footer>
+
+    <!-- IN-PAGE TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#0a3d2e] text-white text-xs font-medium px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-2 z-50 transition-all duration-300 opacity-0 pointer-events-none translate-y-4">
+      <span id="toast-icon">✅</span>
+      <span id="toast-msg">Notification</span>
+    </div>
+
+    <!-- QR CODE PREVIEW MODAL -->
+    <div id="qr-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+      <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center space-y-4 shadow-2xl relative">
+        <button type="button" id="btn-close-qr-modal" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 text-gray-500 hover:text-gray-800 flex items-center justify-center font-bold">
+          ✕
+        </button>
+        
+        <div class="font-serif-brand text-lg font-bold text-[#0a3d2e]">
+          Karims Fashion Corner
+        </div>
+        <p class="text-xs text-gray-600">
+          Scan with any mobile camera to open this Review & VIP Rewards Portal.
+        </p>
+
+        <!-- SVG Vector QR Code Graphic -->
+        <div class="flex justify-center p-4 bg-gray-50 rounded-2xl border border-gray-200">
+          <svg id="qr-svg" class="w-48 h-48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Functional QR Pattern Drawing -->
+            <rect width="100" height="100" fill="white"/>
+            <!-- Top Left Finder Pattern -->
+            <rect x="10" y="10" width="24" height="24" fill="#0a3d2e" rx="4"/>
+            <rect x="14" y="14" width="16" height="16" fill="white" rx="2"/>
+            <rect x="18" y="18" width="8" height="8" fill="#0a3d2e" rx="1"/>
+            <!-- Top Right Finder Pattern -->
+            <rect x="66" y="10" width="24" height="24" fill="#0a3d2e" rx="4"/>
+            <rect x="70" y="14" width="16" height="16" fill="white" rx="2"/>
+            <rect x="74" y="18" width="8" height="8" fill="#0a3d2e" rx="1"/>
+            <!-- Bottom Left Finder Pattern -->
+            <rect x="10" y="66" width="24" height="24" fill="#0a3d2e" rx="4"/>
+            <rect x="14" y="70" width="16" height="16" fill="white" rx="2"/>
+            <rect x="18" y="74" width="8" height="8" fill="#0a3d2e" rx="1"/>
+            <!-- Data Matrix Dots -->
+            <rect x="38" y="12" width="6" height="6" fill="#0a3d2e" rx="1"/>
+            <rect x="48" y="16" width="6" height="6" fill="#c59b27" rx="1"/>
+            <rect x="38" y="26" width="6" height="6" fill="#0a3d2e" rx="1"/>
+            <rect x="48" y="32" width="6" height="6" fill="#0a3d2e" rx="1"/>
+            <rect x="12" y="38" width="6" height="6" fill="#c59b27" rx="1"/>
+            <rect x="22" y="44" width="6" height="6" fill="#0a3d2e" rx="1"/>
+            <rect x="34" y="42" width="6" height="6" fill="#0a3d2e" rx="1"/>
+            <rect x="44" y="44" width="12" height="12" fill="#0a3d2e" rx="2"/>
+            <rect x="60" y="40" width="6" height="6" fill="#c59b27" rx="1"/>
+            <rect x="70" y="42" width="6" height="6" fill="#0a3d2e" rx="1"/>
+            <rect x="80" y="44" width="8" height="8" fill="#0a3d2e" rx="1"/>
+            <rect x="40" y="62" width="6" height="6" fill="#0a3d2e" rx="1"/>
+            <rect x="52" y="64" width="8" height="8" fill="#0a3d2e" rx="1"/>
+            <rect x="68" y="62" width="6" height="6" fill="#c59b27" rx="1"/>
+            <rect x="78" y="68" width="8" height="8" fill="#0a3d2e" rx="1"/>
+            <rect x="40" y="78" width="8" height="8" fill="#0a3d2e" rx="1"/>
+            <rect x="54" y="80" width="6" height="6" fill="#0a3d2e" rx="1"/>
+            <rect x="66" y="80" width="14" height="6" fill="#0a3d2e" rx="1"/>
+          </svg>
+        </div>
+
+        <div class="text-[11px] text-gray-500 font-mono">
+          https://karimsfashioncorner.com/reviews
+        </div>
+
+        <button type="button" id="btn-print-qr" class="w-full py-2.5 bg-[#c59b27] hover:bg-[#aa7c11] text-white text-xs font-bold rounded-xl transition-all">
+          Print Countertop Tent Card (PDF)
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // State management
+    const state = {
+      activeTab: 'reviews',
+      rating: 5,
+      selectedTags: ['chikankari', 'staff', 'value'],
+      tone: 'detailed',
+      googleReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJX-itYKe7BTsRlOnz0uQMyMk'
+    };
+
+    // Review Templates Library
+    const reviewRepository = {
+      detailed: [
+        "Visited Karims Fashion Corner in Chalai Bazaar and had an outstanding shopping experience! Their Chikankari tops and saree collection are top-notch with authentic fabric quality. The staff was remarkably courteous, patient, and guided us with great care. It's rare to find such trust and reasonable pricing. A true Trivandrum landmark!",
+        "Karims has been our family's go-to destination in Chalai for years, and they continue to impress! Picked up stunning cotton kurtis and unstitched dress materials today. Fabric softness and stitching support are excellent, and prices are very fair. Highly recommend stopping by!",
+        "Wonderful experience shopping at Karims Fashion Corner today. Found exquisite bridal and party wear sarees along with beautiful daily wear Chikankari. The customer service was warm, respectful, and very accommodating. Proud to support a 50-year heritage local business in Trivandrum!"
+      ],
+      quick: [
+        "Best shop in Chalai for Chikankari tops and pure cotton sarees! Very courteous staff and honest prices. Highly recommended!",
+        "Superb collection of sarees and dress materials. Genuine quality, reasonable rates, and very friendly customer service in Trivandrum.",
+        "Delighted with my purchase at Karims Fashion Corner! Great fabric variety, patient staff, and smooth shopping experience. 5 stars!"
+      ],
+      heritage: [
+        "Karims Fashion Corner is a true jewel of Chalai Bazaar with over 50 years of heritage. The quality of their sarees, handpicked Chikankari, and ethnic wear speaks for itself. Warm hospitality from the team as always. The most reliable fabric store in Trivandrum!",
+        "A historic family enterprise that preserves the authentic warmth and trust of old Trivandrum. Excellent variety in sarees, kurtis, and unstitched fabrics at uninflated prices. Must visit when shopping in Chalai!",
+        "Shopping at Karims Fashion Corner is always a pleasure. You get unmatched textile authenticity, knowledgeable staff, and wonderful value. A cherished shopping tradition in Chalai since 1971."
+      ]
+    };
+
+    // DOM Elements
+    const navButtons = {
+      reviews: document.getElementById('nav-reviews'),
+      vip: document.getElementById('nav-vip'),
+      instagram: document.getElementById('nav-instagram'),
+      info: document.getElementById('nav-info')
+    };
+
+    const sections = {
+      reviews: document.getElementById('section-reviews'),
+      vip: document.getElementById('section-vip'),
+      instagram: document.getElementById('section-instagram'),
+      info: document.getElementById('section-info')
+    };
+
+    const starButtons = document.querySelectorAll('.star-btn');
+    const starLabel = document.getElementById('star-label');
+    const tagChips = document.querySelectorAll('.tag-chip');
+    const toneButtons = document.querySelectorAll('.tone-btn');
+    const customNoteInput = document.getElementById('custom-note');
+    const btnGenerate = document.getElementById('btn-generate-review');
+    const btnRegenerate = document.getElementById('btn-regenerate');
+    const reviewTextarea = document.getElementById('review-text');
+    const btnCopyAndOpen = document.getElementById('btn-copy-and-open');
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-msg');
+    const toastIcon = document.getElementById('toast-icon');
+
+    const vipForm = document.getElementById('vip-form');
+    const vipCardPreview = document.getElementById('vip-card-preview');
+    const cardMemberName = document.getElementById('card-member-name');
+    const cardMemberId = document.getElementById('card-member-id');
+
+    const qrModal = document.getElementById('qr-modal');
+    const btnShowQrModal = document.getElementById('btn-show-qr-modal');
+    const btnCloseQrModal = document.getElementById('btn-close-qr-modal');
+    const btnPrintQr = document.getElementById('btn-print-qr');
+
+    // Toast helper
+    function showToast(message, icon = '✅') {
+      toastMsg.textContent = message;
+      toastIcon.textContent = icon;
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+      }, 3200);
+    }
+
+    // Switch tab
+    function switchTab(tabId) {
+      state.activeTab = tabId;
+      Object.keys(navButtons).forEach(key => {
+        if (key === tabId) {
+          navButtons[key].classList.add('tab-active');
+          navButtons[key].classList.remove('text-gray-600', 'bg-white');
+          sections[key].classList.remove('hidden');
+        } else {
+          navButtons[key].classList.remove('tab-active');
+          navButtons[key].classList.add('text-gray-600');
+          sections[key].classList.add('hidden');
+        }
+      });
+    }
+
+    // Wire up tab clicks
+    navButtons.reviews.addEventListener('click', () => switchTab('reviews'));
+    navButtons.vip.addEventListener('click', () => switchTab('vip'));
+    navButtons.instagram.addEventListener('click', () => switchTab('instagram'));
+    navButtons.info.addEventListener('click', () => switchTab('info'));
+
+    // Star rating
+    function updateStars(val) {
+      state.rating = val;
+      starButtons.forEach(btn => {
+        const starVal = parseInt(btn.getAttribute('data-star'), 10);
+        btn.classList.toggle('text-amber-400', starVal <= val);
+        btn.classList.toggle('text-gray-300', starVal > val);
+      });
+      const labels = {
+        5: '5.0 Excellent!',
+        4: '4.0 Very Good',
+        3: '3.0 Good',
+        2: '2.0 Average',
+        1: '1.0 Needs Improvement'
+      };
+      starLabel.textContent = labels[val] || `${val}.0`;
+    }
+
+    starButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = parseInt(btn.getAttribute('data-star'), 10);
+        updateStars(val);
+      });
+    });
+
+    // Tag chip selection
+    tagChips.forEach(chip => {
+      const tag = chip.getAttribute('data-tag');
+      if (state.selectedTags.includes(tag)) {
+        chip.classList.add('bg-emerald-900', 'text-white', 'border-emerald-900');
+        chip.classList.remove('bg-white', 'text-gray-700');
+      }
+      chip.addEventListener('click', () => {
+        if (state.selectedTags.includes(tag)) {
+          state.selectedTags = state.selectedTags.filter(t => t !== tag);
+          chip.classList.remove('bg-emerald-900', 'text-white', 'border-emerald-900');
+          chip.classList.add('bg-white', 'text-gray-700');
+        } else {
+          state.selectedTags.push(tag);
+          chip.classList.add('bg-emerald-900', 'text-white', 'border-emerald-900');
+          chip.classList.remove('bg-white', 'text-gray-700');
+        }
+      });
+    });
+
+    // Tone buttons
+    toneButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        toneButtons.forEach(b => {
+          b.classList.remove('border-[#0a3d2e]', 'bg-emerald-50', 'text-[#0a3d2e]', 'font-semibold');
+          b.classList.add('border-gray-200', 'bg-white', 'text-gray-600');
+        });
+        btn.classList.remove('border-gray-200', 'bg-white', 'text-gray-600');
+        btn.classList.add('border-[#0a3d2e]', 'bg-emerald-50', 'text-[#0a3d2e]', 'font-semibold');
+        state.tone = btn.getAttribute('data-tone');
+        generateReview();
+      });
+    });
+
+    // Generate Review Logic
+    function generateReview() {
+      const pool = reviewRepository[state.tone] || reviewRepository.detailed;
+      let review = pool[Math.floor(Math.random() * pool.length)];
+
+      const customNote = customNoteInput.value.trim();
+      if (customNote) {
+        review += ` Specifically, ${customNote}.`;
+      }
+      reviewTextarea.value = review;
+    }
+
+    btnGenerate.addEventListener('click', () => {
+      generateReview();
+      showToast('AI Review suggestion generated!', '✨');
+    });
+
+    btnRegenerate.addEventListener('click', () => {
+      generateReview();
+      showToast('Generated fresh review variation!', '🔄');
+    });
+
+    // Initial review generation
+    generateReview();
+
+    // Copy and Open Google
+    btnCopyAndOpen.addEventListener('click', () => {
+      const textToCopy = reviewTextarea.value.trim();
+      if (!textToCopy) {
+        showToast('Please generate or type a review first', '⚠️');
+        return;
+      }
+
+      // Clipboard with fallback
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textToCopy).catch(() => {
+          fallbackCopyText(textToCopy);
+        });
+      } else {
+        fallbackCopyText(textToCopy);
+      }
+
+      showToast('Review copied! Opening Google Reviews...', '📋');
+
+      // Open Google Review Link in new tab
+      setTimeout(() => {
+        window.open(state.googleReviewUrl, '_blank');
+      }, 600);
+    });
+
+    function fallbackCopyText(text) {
+      try {
+        reviewTextarea.select();
+        document.execCommand('copy');
+      } catch (err) {
+        console.warn('Fallback copy failed', err);
+      }
+    }
+
+    // VIP Form Submission
+    vipForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('vip-name').value.trim();
+      const phone = document.getElementById('vip-phone').value.trim();
+      const category = document.getElementById('vip-category').value;
+
+      if (!name || !phone) return;
+
+      const randomId = 'KFC-' + Math.floor(1000 + Math.random() * 9000);
+      cardMemberName.textContent = name;
+      cardMemberId.textContent = randomId;
+      vipCardPreview.classList.remove('hidden');
+
+      showToast(`Welcome to Karims VIP, ${name}! Code: KARIMS10`, '👑');
+
+      // Store in localStorage safely
+      try {
+        const vipMembers = JSON.parse(localStorage.getItem('karims_vip_members') || '[]');
+        vipMembers.push({ name, phone, category, memberId: randomId, date: new Date().toISOString() });
+        localStorage.setItem('karims_vip_members', JSON.stringify(vipMembers));
+      } catch (err) {
+        console.log('Storage not accessible', err);
+      }
+    });
+
+    // QR Modal Controls
+    btnShowQrModal.addEventListener('click', () => {
+      qrModal.classList.remove('hidden');
+    });
+
+    btnCloseQrModal.addEventListener('click', () => {
+      qrModal.classList.add('hidden');
+    });
+
+    btnPrintQr.addEventListener('click', () => {
+      window.print();
+    });
+
+    // Close modal on click outside
+    qrModal.addEventListener('click', (e) => {
+      if (e.target === qrModal) {
+        qrModal.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
